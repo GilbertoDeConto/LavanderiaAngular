@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col s8">
+
+      <div class="row" *ngFor="let p of listaPedidos">
+        <h6>{{p.cliente}}</h6>
+        <h6>{{p.dataEntrada | date: 'dd/MM/yyyy'}} - {{p.dataRetirada | date: 'dd/MM/yyyy'}}</h6>
+        <div class="row">
+            <div class="col s3">Pesadas<br/><span>{{p.qtdPesadas}}</span></div>
+            <div class="col s3">Delicadas<br/><span>{{p.qtdDelicadas}}</span></div>
+            <div class="col s3">Normais<br/><span>{{p.qtdNormais}}</span></div>
+        </div>
+
+        <div class="col s8">
+          <span>Status: {{p.status}}</span>
+          <input type="button" value="Atualizar" class="waves-effect waves-light blue btn right" (click)="alterarStatus(p, 2)" />
+        </div>
+              
+        
+
+        <div class="row">
+          <div class="col s12">Total: R$ {{p.valor}}
+              <a style="float:right;" (click)="excluir(p._id)">Excluir</a></div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+
+  </div>

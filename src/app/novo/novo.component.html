@@ -1,0 +1,83 @@
+<div class="container">
+
+    <form #frmContrib="ngForm">
+
+        <div class="row">
+            <div class="col s12">
+                <div class="input-field col s12">
+                    <input type="text" name="cliente" id="cliente" [(ngModel)] = "ped.cliente" #cliente="ngModel" required/>
+                    <label for="cliente">Cliente</label>
+                    <span *ngIf="cliente.invalid && cliente.dirty">(*) Cliente é obrigatório!</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s6">
+                <input type="text" name="telefone" id="telefone" [(ngModel)] = "ped.telefone" #telefone="ngModel" required/>
+                <label for="telefone">Telefone</label>
+                <span *ngIf="telefone.invalid && telefone.dirty">(*) Telefone é obrigatório!</span>
+            </div>
+            <div class="col s6">
+                <input type="text" name="dataRetirada" id="dataRetirada" [(ngModel)] = "ped.dataRetirada" #dataRetirada="ngModel" required/>
+                <label for="dataRetirada">Data da Retirada</label>
+                <span *ngIf="dataRetirada.invalid && dataRetirada.dirty">(*) dataRetirada é obrigatório!</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s4">
+                <div class="input-field col s12">
+                    <input type="number" name="qtdPesadas" id="qtdPesadas" [(ngModel)] = "ped.qtdPesadas" #qtdPesadas="ngModel" required/>
+                    <label for="qtdPesadas">Pesadas</label>
+                    <span *ngIf="qtdPesadas.invalid && qtdPesadas.dirty">(*) Pesadas é obrigatório!</span>
+                </div>
+            </div>
+            <div class="col s4">
+                <div class="input-field col s12">
+                    <input type="number" name="qtdNormais" id="qtdNormais" [(ngModel)] = "ped.qtdNormais" #qtdNormais="ngModel" required/>
+                    <label for="qtdNormais">Normais</label>
+                    <span *ngIf="qtdNormais.invalid && qtdNormais.dirty">(*) Normais é obrigatório!</span>
+                </div>
+            </div>
+            <div class="col s4">
+                <div class="input-field col s12">
+                    <input type="number" name="qtdDelicadas" id="qtdDelicadas" [(ngModel)] = "ped.qtdDelicadas" #qtdDelicadas="ngModel" required/>
+                    <label for="qtdDelicadas">Delicadas</label>
+                    <span *ngIf="qtdDelicadas.invalid && qtdDelicadas.dirty">(*) Delicadas é obrigatório!</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s2">        
+                    <p>
+                        <label>
+                        <input class="with-gap" name="group1" type="radio" checked/>
+                        <span>Apenas Lavar</span>
+                        </label>
+                    </p>
+                
+            </div>
+            <div class="col s2"> 
+                    <p>
+                       <label>
+                       <input class="with-gap" name="group1" type="radio" />
+                        <span>Lavar e passar</span>
+                        </label>
+                    </p> 
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="col s6">
+                <button class="btn btn-large waves-effect waves-light light-blue darken-2" (click)="salvar()" style="width: 100%">Salvar</button>
+            </div>
+            <div class="col s6">
+                <button class="btn btn-large waves-effect waves-light grey lighten-3 grey-text text-darken-1" (click) ="cancelar()" style="width: 100%">Cancelar</button>
+            </div>
+        </div>
+
+    </form>
+
+</div>
